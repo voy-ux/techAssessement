@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../main.dart';
+import '../services/menu_drawer.dart';
 
 class DisplayText extends StatefulWidget {
-  static const String id = 'DisplayText';
+  static String routeName = 'DisplayText';
   const DisplayText({Key? key}) : super(key: key);
 
   @override
@@ -22,49 +20,7 @@ class _DisplayTextState extends State<DisplayText> {
         centerTitle: true,
         title: const Text('Technical Assessment'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              // decoration: BoxDecoration(
-              //   color: Colors.blue,
-              // ),
-                child: Text('')
-            ),
-            ListTile(
-              leading:const Icon(
-                Icons.text_format,
-              ),
-              title: const Text('Input Text'),
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  DisplayText()),
-                );
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.face_unlock_sharp,
-              ),
-              title: const Text('Dad joke'),
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  HomePage()),
-                );
-              },
-              // onTap: (){
-              //  HomePage();
-              // },
-            ),
-
-
-          ],
-        ),
-      ),
-
+      drawer: menuDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -101,7 +57,6 @@ class _DisplayTextState extends State<DisplayText> {
               color: Colors.blue,
               child:  const Text('Display', style: TextStyle(color: Colors.white)),
             ),
-
           ],
         ),
       ),

@@ -7,9 +7,6 @@ class ApiCall{
   Future getDadJoke() async{
     http.Response response = await http.get(Uri.parse(url),
         headers: {"Accept": "text/plain"});
-
     return response.body;
-    // String body = response.body;
-    // return body;
   }
 }

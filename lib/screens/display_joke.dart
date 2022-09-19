@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
+import 'dad_joke.dart';
 
 class DisplayJoke extends StatefulWidget {
   static const String id = 'DisplayJoke';
@@ -17,7 +17,6 @@ class _DisplayJokeState extends State<DisplayJoke> {
       body: Container(
 
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 6),
-        // color: Colors.blue,
         child: Center(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -45,7 +44,7 @@ class _DisplayJokeState extends State<DisplayJoke> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => const DadJoke(),
                       ),
                     );
                   },
